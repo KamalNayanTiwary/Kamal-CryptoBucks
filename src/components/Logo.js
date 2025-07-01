@@ -6,12 +6,10 @@ const Logo = () => {
   return (
     <Link
       to="/"
-      className="
-     absolute top-[1.5rem] left-[1.5rem] [text-decoration:none]
-text-lg text-cyan flex items-center
-     "
+      className="text-cyan flex items-center gap-2 text-lg font-bold
+        justify-center md:justify-start"
     >
-      <img src={logoSvg} alt="CryptoBucks" />
+      <img src={logoSvg} alt="CryptoBucks" className="w-6 h-6" />
       <span>CryptoBucks</span>
     </Link>
   );

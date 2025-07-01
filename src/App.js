@@ -1,11 +1,23 @@
-import logo from './logo.svg';
+import React from "react";
+import logoSvg from "./logo.svg"; // default react logo if still using
+import Logo from "./components/Logo"; // ✅ your Logo component
+import Navigation from "./components/Navigation"; // ✅ your Navigation component
 
 function App() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white px-4">
-      <header className="flex flex-col items-center text-center">
+    <div className="bg-gray-900 text-white px-4">
+      {/* Header: Logo + Navigation */}
+      <div
+        className="w-full flex flex-col md:flex-row items-center justify-between px-4 mt-4 md:mt-8 relative"
+      >
+        <Logo />
+        <Navigation />
+      </div>
+
+      {/* Default React content */}
+      <header className="flex flex-col items-center text-center mt-8">
         <img
-          src={logo}
+          src={logoSvg}
           alt="React Logo"
           className="w-32 h-32 animate-spin mb-6"
         />

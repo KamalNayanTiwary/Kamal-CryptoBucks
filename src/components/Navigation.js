@@ -3,7 +3,10 @@ import { NavLink } from "react-router-dom";
 
 const Navigation = () => {
   return (
-    <nav className="w-full md:w-[40%] mt-4 md:mt-16 flex flex-col md:flex-row gap-2 md:gap-0 justify-around items-center border border-cyan rounded-lg px-4">
+    <nav
+      className="w-full md:w-auto flex flex-col md:flex-row gap-2 md:gap-4 
+      justify-center md:justify-end items-center mt-4 md:mt-0"
+    >
       {["/", "/trending", "/saved"].map((path, i) => (
         <NavLink
           key={path}
@@ -11,10 +14,12 @@ const Navigation = () => {
           end={path === "/"}
           className={({ isActive }) =>
             `w-full md:w-auto text-base text-center font-nunito px-4 py-2
-            ${isActive
-              ? "bg-cyan text-gray-300"
-              : "bg-gray-200 text-gray-100 hover:text-cyan active:bg-cyan active:text-gray-300"}
-            border-0 cursor-pointer rounded capitalize font-semibold`
+            ${
+              isActive
+                ? "bg-cyan text-black"
+                : "bg-gray-200 text-white hover:text-cyan"
+            }
+            rounded capitalize font-semibold transition-all duration-200`
           }
         >
           {["Crypto", "Trending", "Saved"][i]}
